@@ -1,0 +1,251 @@
+/* Container Utama Pengumuman */
+.pengumuman-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a1a;
+    border: 1px solid #ff1e1e; /* Border tipis warna merah khas NexaToon */
+    margin: 0 15px 15px 15px; /* Margin sinkron dengan jarak slider */
+    padding: 10px 15px;
+    border-radius: 12px; /* Melengkung di setiap sudut */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    z-index: 10;
+}
+
+/* Konten Pengumuman (Ikon + Teks) */
+.pengumuman-konten {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* Gaya Ikon Megaphone */
+.pengumuman-ikon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ff1e1e; /* Berwarna merah */
+    background-color: rgba(255, 30, 30, 0.1);
+    padding: 6px;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.pengumuman-ikon svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Pembungkus Teks Berjalan */
+.pengumuman-teks-wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* Animasi Teks Berjalan Lembut */
+.pengumuman-teks {
+    white-space: nowrap;
+    padding-left: 100%;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #e0e0e0;
+    animation: jalanTerus 25s linear infinite;
+}
+
+/* Efek Berhenti saat Kursor Mouse di atas teks (PC) */
+.pengumuman-teks-wrapper:hover .pengumuman-teks {
+    animation-play-state: paused;
+}
+
+@keyframes jalanTerus {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-100%, 0, 0); }
+}
+
+/* Tombol Tutup (X) */
+.pengumuman-tutup {
+    background: none;
+    border: none;
+    color: #a0a0a0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    margin-left: 10px;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.pengumuman-tutup:hover {
+    color: #ff1e1e;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.pengumuman-tutup svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* RESPONSIVE: Sedikit penyesuaian di HP */
+@media screen and (max-width: 768px) {
+    .pengumuman-container {
+        margin: 0 10px 15px 10px; /* Sinkron dengan margin mobile slider */
+        padding: 8px 12px;
+    }
+    .pengumuman-teks {
+        font-size: 0.8rem;
+        animation-duration: 20s; /* Sedikit lebih cepat di HP karena layar pendek */
+    }
+}
+
+
+===========================================================
+
+/* Pembungkus luar agar posisi tidak berantakan */
+.pengumuman-wrapper {
+    margin: 0 15px 15px 15px; /* Jarak sinkron dengan slider */
+}
+
+/* Container Utama Pengumuman (Ganti properti margin-nya dari yang kemarin) */
+.pengumuman-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a1a;
+    border: 1px solid #ff1e1e;
+    padding: 10px 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Konten Pengumuman */
+.pengumuman-konten {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    overflow: hidden;
+}
+
+.pengumuman-ikon, .pengumuman-ikon-mini {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ff1e1e;
+    background-color: rgba(255, 30, 30, 0.1);
+    padding: 6px;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.pengumuman-ikon svg, .pengumuman-ikon-mini svg {
+    width: 18px;
+    height: 18px;
+}
+
+.pengumuman-teks-wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.pengumuman-teks {
+    white-space: nowrap;
+    padding-left: 100%;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #e0e0e0;
+    animation: jalanTerus 25s linear infinite;
+}
+
+.pengumuman-teks-wrapper:hover .pengumuman-teks {
+    animation-play-state: paused;
+}
+
+@keyframes jalanTerus {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-100%, 0, 0); }
+}
+
+.pengumuman-tutup {
+    background: none;
+    border: none;
+    color: #a0a0a0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    margin-left: 10px;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.pengumuman-tutup:hover {
+    color: #ff1e1e;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.pengumuman-tutup svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* --- TOMBOL BARU: LIHAT PENGUMUMAN (SAAT COLLAPSE) --- */
+.pengumuman-buka {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #1a1a1a;
+    border: 1px solid #ff1e1e;
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 20px; /* Bentuk kapsul yang rapi */
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+    width: max-content; /* Ukuran pas sesuai teks */
+}
+
+.pengumuman-buka:hover {
+    background-color: #ff1e1e;
+}
+
+.pengumuman-buka:hover .pengumuman-ikon-mini {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Class Utility untuk menyembunyikan elemen secara halus */
+.tersembunyi {
+    display: none !important;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+    .pengumuman-wrapper {
+        margin: 0 10px 15px 10px;
+    }
+    .pengumuman-container {
+        padding: 8px 12px;
+    }
+    .pengumuman-teks {
+        font-size: 0.8rem;
+        animation-duration: 20s;
+    }
+}

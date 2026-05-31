@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - NexaToon</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="slider.css">
+    <link rel="stylesheet" href="pengumuman.css">
+    <link rel="stylesheet" href="genre.css">
+    <link rel="stylesheet" href="terbaru.css">
+    <link rel="stylesheet" href="populer.css">
+    <link rel="stylesheet" href="lanjutkan.css">
+    <link rel="stylesheet" href="rekomendasi.css">
+    <link rel="stylesheet" href="donghua.css">
+    <link rel="stylesheet" href="anime.css">
+    <link rel="stylesheet" href="manhwa.css">
+    <link rel="stylesheet" href="manga.css">
+    <link rel="stylesheet" href="manhua.css">
+    <link rel="stylesheet" href="jadwal.css">
+    <link rel="stylesheet" href="novel.css">
+</head>
+<body>
+  
+    <!-- Masukkan ini di bagian paling atas body -->
+<nav class="navbar">
+    <div class="navbar-kiri">
+        <!-- Ganti 'logo.png' dengan nama file gambar logomu nanti -->
+        <img src="logo.png" alt="Logo" class="navbar-logo">
+        <span class="navbar-judul">NexaToon</span>
+    </div>
+    
+    <div class="navbar-kanan">
+        <!-- Tombol Koin -->
+        <div class="navbar-koin">
+            <i class="ikon-koin" data-lucide="coins"></i>
+            <span class="jumlah-koin">0</span>
+        </div>
+        
+        <a href="cari.html" class="navbar-cari" aria-label="Cari">
+    <i data-lucide="search"></i>
+</a>
+
+</div>
+
+</nav>
+
+<header>
+  
+     <header>
+    <div class="slider-container">
+        <div class="slider-wrapper" id="sliderWrapper">
+            </div>
+
+        <div class="slider-dots" id="sliderDots"></div>
+    </div>
+    
+    
+<div class="pengumuman-wrapper">
+    
+    <div class="pengumuman-container" id="boxPengumuman">
+        <div class="pengumuman-konten">
+            <div class="pengumuman-ikon">
+                <i data-lucide="megaphone"></i>
+            </div>
+            <div class="pengumuman-teks-wrapper">
+                <p class="pengumuman-teks">
+                    [PENGUMUMAN NexaToon]: Pindah server selesai! Kecepatan loading baca & nonton meningkat 2x lipat. • Jangan lupa klaim koin harianmu di menu profil! • Solo Leveling Season 2 Episode terbaru sedikit mengalami keterlambatan rilis dari pusat.
+                </p>
+            </div>
+        </div>
+        <button class="pengumuman-tutup" id="tombolTutupPengumuman" aria-label="Tutup Pengumuman">
+            <i data-lucide="x"></i>
+        </button>
+    </div>
+
+    <button class="pengumuman-buka tersembunyi" id="tombolBukaPengumuman">
+        <div class="pengumuman-ikon-mini">
+            <i data-lucide="megaphone"></i>
+        </div>
+        <span>Lihat Pengumuman</span>
+    </button>
+</div>
+
+  <section class="genre-section">
+  
+    <div class="genre-header">
+        <h2 class="genre-title">Genre</h2>
+        <a href="jelajahi.html" class="genre-lihat-semua">
+            <span>Lihat semua</span>
+            <i data-lucide="chevron-right"></i>
+        </a>
+    </div>
+
+
+<section class="genre-section">
+    <div class="genre-container" id="genreContainer">
+    </div>
+</section>
+   
+
+<section class="terbaru-section">
+    
+    <div class="terbaru-header">
+        <h2 class="terbaru-title">NexaToon Terbaru</h2>
+        <a href="jelajahi.html" class="terbaru-lihat-semua">
+            <span>Lihat semua</span>
+            <i data-lucide="chevron-right"></i>
+        </a>
+    </div>
+
+    
+    <div class="terbaru-grid" id="terbaruGrid">
+      
+    </div>
+</section>
+     
+     <section class="populer-section">
+    <div class="populer-header">
+        <h2 class="populer-title">NexaToon Populer</h2>
+        <a href="jelajahi.html" class="populer-lihat-semua">
+            <span>Lihat semua</span>
+            <i data-lucide="chevron-right"></i>
+        </a>
+    </div>
+
+    <div class="populer-list" id="populerList">
+        </div>
+</section>
+
+    <section class="lanjutkan-section">
+    <div class="lanjutkan-header">
+        <h2 class="lanjutkan-title">NexaToon Lanjutkan</h2>
+        <a href="riwayat.html" class="lanjutkan-lihat-semua">
+            <span>Lihat semua</span>
+            <i data-lucide="chevron-right"></i>
+        </a>
+    </div>
+
+    <div class="lanjutkan-slider" id="lanjutkanSlider">
+        </div>
+</section>
+  
+     <section class="rekomendasi-section">
+    <div class="rekomendasi-header">
+        <h2 class="rekomendasi-title">NexaToon Rekomendasi</h2>
+        <a href="jelajahi.html" class="rekomendasi-lihat-semua">
+            <span>Lihat semua</span>
+            <i data-lucide="chevron-right"></i>
+        </a>
+    </div>
+
+    <div class="rekomendasi-list" id="rekomendasiList">
+        </div>
+</section>
+
+    <section class="donghua-section">
+    <div class="donghua-header">
+        <h2 class="donghua-title">NexaToon Donghua</h2>
+        <a href="jelajahi.html" class="donghua-lihat-semua">
+            <span>Lihat semua</span>
+            <i data-lucide="chevron-right"></i>
+        </a>
+    </div>
+
+    <div class="donghua-slider" id="donghuaSlider">
+        </div>
+</section>
+
+    <section class="anime-section">
+    <div class="anime-header">
+        <h2 class="anime-title">NexaToon Anime</h2>
+        <a href="jelajahi.html" class="anime-lihat-semua">
+            <span>Lihat semua</span>
+            <i data-lucide="chevron-right"></i>
+        </a>
+    </div>
+
+    <div class="anime-slider" id="animeSlider">
+        </div>
+</section>
+
+    <section class="manga-section">
+    <div class="manga-header">
+        <h2 class="manga-title">NexaToon Manga</h2>
+        <a href="jelajahi.html" class="manga-lihat-semua">
+            <span>Lihat semua</span>
+            <i data-lucide="chevron-right"></i>
+        </a>
+    </div>
+
+    <div class="manga-slider" id="mangaSlider">
+        </div>
+</section>
+
+    <section class="manhwa-section">
+    <div class="manhwa-header">
+        <h2 class="manhwa-title">NexaToon Manhwa</h2>
+        <a href="jelajahi.html" class="manhwa-lihat-semua">
+            <span>Lihat semua</span>
+            <i data-lucide="chevron-right"></i>
+        </a>
+    </div>
+
+    <div class="manhwa-slider" id="manhwaSlider">
+        </div>
+</section>
+
+     <section class="manhua-section">
+    <div class="manhua-header">
+        <h2 class="manhua-title">NexaToon Manhua</h2>
+        <a href="jelajahi.html" class="manhua-lihat-semua">
+            <span>Lihat semua</span>
+            <i data-lucide="chevron-right"></i>
+        </a>
+    </div>
+
+    <div class="manhua-slider" id="manhuaSlider">
+        </div>
+</section>
+
+   <section class="novel-section">
+    <div class="novel-header">
+        <h2 class="novel-title">NexaToon Novel</h2>
+        <a href="jelajahi.html" class="novel-lihat-semua">
+            <span>Lihat semua</span>
+            <i data-lucide="chevron-right"></i>
+        </a>
+    </div>
+
+    <div class="novel-slider" id="novelSlider">
+        </div>
+</section>
+
+
+<section class="jadwal-section">
+    <div class="jadwal-header">
+        <h2 class="jadwal-title">Jadwal Rilis</h2>
+        <span class="jadwal-sub">Waktu Server Asia/Jakarta</span>
+    </div>
+
+    <div class="jadwal-tabs" id="jadwalTabs">
+        <button class="tab-hari" data-hari="senin">Sen</button>
+        <button class="tab-hari" data-hari="selasa">Sel</button>
+        <button class="tab-hari" data-hari="rabu">Rab</button>
+        <button class="tab-hari" data-hari="kamis">Kam</button>
+        <button class="tab-hari" data-hari="jumat">Jum</button>
+        <button class="tab-hari" data-hari="sabtu">Sab</button>
+        <button class="tab-hari" data-hari="minggu">Min</button>
+    </div>
+
+    <div class="jadwal-grid" id="jadwalGrid">
+        </div>
+</section>
+
+
+
+</header>
+
+
+</header>
+
+<!-- Navbar Bawah untuk Tampilan Mobile -->
+<nav class="navbar-bawah">
+    <a href="home.html" class="nav-bawah-item aktif">
+        <i data-lucide="home"></i>
+        <span>Home</span>
+    </a>
+    <a href="sosial-media.html" class="nav-bawah-item">
+        <i data-lucide="tv"></i>
+        <span>Sosial Media</span>
+    </a>
+    <a href="manga.html" class="nav-bawah-item">
+        <i data-lucide="book-open"></i>
+        <span>Jelajahi</span>
+    </a>
+    <a href="bookmark.html" class="nav-bawah-item">
+        <i data-lucide="bookmark"></i>
+        <span>Library</span>
+    </a>
+    <a href="profil.html" class="nav-bawah-item">
+        <i data-lucide="user"></i>
+        <span>Profil</span>
+    </a>
+</nav>
+
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  lucide.createIcons();
+
+</script>
+    
+    <script src="slider.js"></script>
+    <script src="slider-data.js"></script>
+    <script src="pengumuman.js"></script>
+    <script src="genre-data.js"></script>
+    <script src="genre.js"></script>
+    <script src="terbaru-data.js"></script>
+    <script src="terbaru.js"></script>
+    <script src="populer-data.js"></script>
+    <script src="populer.js"></script>
+    <script src="lanjutkan-data.js"></script>
+    <script src="lanjutkan.js"></script>
+    <script src="rekomendasi-data.js"></script>
+    <script src="rekomendasi.js"></script>
+    <script src="donghua-data.js"></script>
+    <script src="donghua.js"></script>
+    <script src="anime-data.js"></script>
+    <script src="anime.js"></script>
+    <script src="manhwa-data.js"></script>
+    <script src="manhwa.js"></script>
+    <script src="manga-data.js"></script>
+    <script src="manga.js"></script>
+    <script src="manhua-data.js"></script>
+    <script src="manhua.js"></script>
+    <script src="jadwal-data.js"></script>
+    <script src="jadwal.js"></script>
+    <script src="novel-data.js"></script>
+    <script src="novel.js"></script>
+    <script src="navbar-smart.js"></script>
+
+
+
+
+
+
+
+
+    </body>
+</html>

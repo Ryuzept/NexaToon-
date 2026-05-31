@@ -1,0 +1,127 @@
+/* --- RESET & FONT GLOBAL --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #0b0b0c;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* --- CONTAINER UTAMA (HUB) --- */
+center {
+    width: 100%;
+    max-width: 480px; /* Lebar maksimal seukuran HP agar pas di-scroll */
+    background: rgba(20, 20, 22, 0.8);
+    border: 1px solid #1a1a1f;
+    border-radius: 24px;
+    padding: 35px 25px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+}
+
+/* --- HEADER TEXT --- */
+h2 {
+    font-size: 1.6rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+p {
+    font-size: 0.85rem;
+    color: #9090a0;
+    line-height: 1.4;
+}
+
+hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ff1e1e, transparent);
+    margin: 20px auto;
+}
+
+/* --- STRUKTUR KARTU / TOMBOL KUSTOM --- */
+div {
+    background: #131316;
+    border: 1px solid #22222a;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 18px;
+    text-align: left;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efek Sorot saat Kartu Disentuh */
+div:hover {
+    transform: translateY(-4px);
+    border-color: #ff1e1e;
+    box-shadow: 0 8px 20px rgba(255, 30, 30, 0.1);
+}
+
+div h3 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+/* Titik Indikator kecil penanda fitur aktif */
+div h3::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: #ff1e1e;
+    border-radius: 50%;
+    margin-right: 8px;
+    box-shadow: 0 0 8px #ff1e1e;
+}
+
+div p {
+    margin-bottom: 15px;
+}
+
+/* --- TOMBOL TOMBOL KUSTOM (ACTION BUTTON) --- */
+button {
+    width: 100%;
+    background: #ffffff;
+    color: #000000;
+    border: none;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+/* Efek saat Tombol di-Hover */
+button:hover {
+    background: #ff1e1e;
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(255, 30, 30, 0.5);
+}
+
+/* Efek saat Tombol Diklik */
+button:active {
+    transform: scale(0.98);
+}
+
+/* Menghilangkan garis bawah bawaan tag <a> */
+a {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+}

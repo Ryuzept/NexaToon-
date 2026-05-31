@@ -1,0 +1,204 @@
+/* --- SECTION UTAMA NEXATOON TERBARU --- */
+.terbaru-section {
+    margin: 0 15px 25px 15px;
+}
+
+/* Header (Judul Kiri & Lihat Semua Kanan) */
+.terbaru-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 0 2px;
+}
+
+.terbaru-title {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-left: 10px;
+}
+
+.terbaru-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 16px;
+    background-color: #ff1e1e;
+    border-radius: 2px;
+}
+
+.terbaru-lihat-semua {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    color: #ff1e1e;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+/* --- GRID SYSTEM: KUNCI TEPAT 3 KOLOM --- */
+.terbaru-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 12px; /* Jarak antar kartu */
+}
+
+/* --- DESAIN KARTU (CARD) --- */
+.kartu-nexa {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #2a2a2a;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+    text-decoration: none;
+    height: 100%; /* Memaksa semua kartu dalam sebaris tingginya sama rata */
+}
+
+.kartu-nexa:hover {
+    transform: translateY(-4px);
+    border-color: #ff1e1e;
+}
+
+/* Bagian Atas Kartu (Gambar & Badge) */
+.kartu-atas {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4; /* Rasio potret mutlak untuk gambar */
+    background-color: #000;
+    overflow: hidden;
+}
+
+.kartu-gambar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Badge Tipe Konten (Kiri Atas) */
+.badge-jenis {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    color: #fff;
+    z-index: 3;
+}
+
+.badge-jenis.anime, .badge-jenis.donghua { background-color: #ff1e1e; }
+.badge-jenis.manga { background-color: #007bff; }
+.badge-jenis.manhwa { background-color: #28a745; }
+.badge-jenis.manhua { background-color: #ffc107; color: #121212; }
+
+/* Badge Episode/Chapter (Kanan Bawah Gambar) */
+.badge-update {
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 2px 5px;
+    border-radius: 4px;
+    border-left: 3px solid #ff1e1e;
+    z-index: 3;
+}
+
+/* Bagian Bawah Kartu (Penyelaras Teks Utama) */
+.kartu-bawah {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Memaksa judul di atas dan meta di paling bawah */
+    flex-grow: 1; /* Mengisi sisa ruang kartu secara otomatis */
+    background-color: #1a1a1a;
+}
+
+/* Judul Film / Komik */
+.kartu-judul {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.3;
+    margin: 0 0 8px 0;
+    
+    /* Mengunci ruang teks maksimal 2 baris agar seragam di semua kartu */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 2.6em; 
+}
+
+/* Metadata Waktu & Rating (Terkunci Sejajar Gak Bakal Naik-Turun) */
+.kartu-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.7rem;
+    margin-top: auto; /* Memastikan nempel di dasar container .kartu-bawah */
+    padding-top: 4px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05); /* Garis batas tipis transparan agar makin rapi */
+}
+
+.kartu-waktu {
+    color: #a0a0a0;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.kartu-rating {
+    color: #ffd700;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-weight: 700;
+}
+
+.kartu-meta svg {
+    width: 10px;
+    height: 10px;
+}
+
+/* --- RESPONSIVE OPTIMASI KHUSUS MOBILE --- */
+@media screen and (max-width: 768px) {
+    .terbaru-section { 
+        margin: 0 10px 25px 10px; 
+    }
+    .terbaru-title { 
+        font-size: 1.05rem; 
+    }
+    .terbaru-lihat-semua { 
+        font-size: 0.75rem; 
+    }
+    .terbaru-grid { 
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 8px; /* Mempersempit jarak antar grid di HP agar presisi */
+    }
+    .kartu-nexa {
+        border-radius: 8px;
+    }
+    .kartu-bawah {
+        padding: 6px;
+    }
+    .kartu-judul { 
+        font-size: 0.75rem; 
+        margin-bottom: 4px;
+    }
+    .kartu-meta {
+        font-size: 0.62rem;
+    }
+}

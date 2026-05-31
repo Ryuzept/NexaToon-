@@ -1,0 +1,251 @@
+/* Gaya untuk Navbar Atas */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1a1a1a; /* Gelap nyaman di mata */
+    border-bottom: 2px solid #2a2a2a;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Bagian Kiri (Logo & Judul) */
+.navbar-kiri {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.navbar-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.navbar-judul {
+    font-size: 1.6rem;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-style: italic; /* Membuat teks miring agar terlihat dinamis dan sporty */
+    display: inline-block;
+    position: relative;
+    
+    /* Kombinasi warna belah: Merah (75%), Putih (25%), ditambah lapisan kilatan cahaya di tengahnya */
+    background: linear-gradient(
+        105deg, 
+        #ff1e1e 0%, #ff1e1e 70%, 
+        rgba(255, 255, 255, 0.6) 72%, rgba(255, 255, 255, 0.6) 74%, /* Jalur Kilatan Cahaya */
+        #ff1e1e 75%, 
+        #ffffff 75%, #ffffff 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* Memberikan efek bayangan neon merah tipis agar teks menyala di latar belakang gelap */
+    filter: drop-shadow(0px 2px 8px rgba(255, 30, 30, 0.3));
+    
+    /* Menjalankan animasi kilatan cahaya terus-menerus */
+    animation: kilauTeks 4s linear infinite;
+}
+
+/* Animasi untuk menggeser kilatan cahaya */
+@keyframes kilauTeks {
+    0% {
+        background-position: 0% center;
+    }
+    30% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: -200% center; /* Memberi jeda diam sebentar sebelum berkilau lagi */
+    }
+}
+
+
+/* Bagian Kanan (Koin & Cari) */
+.navbar-kanan {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+/* Komponen Koin */
+.navbar-koin {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #2a2a2a;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.ikon-koin {
+    color: #ffd700; /* Warna emas untuk koin */
+    width: 18px;
+    height: 18px;
+}
+
+.jumlah-koin {
+    color: #ffffff;
+}
+
+/* Tombol Cari Bulat */
+.navbar-cari {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+    background-color: #2a2a2a;
+    border: none;
+    border-radius: 50%; /* Membuatnya bulat sempurna */
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Efek saat tombol cari didekati kursor */
+.navbar-cari:hover {
+    background-color: #ff3838;
+    transform: scale(1.05);
+}
+
+.navbar-cari svg {
+    width: 20px;
+    height: 20px;
+}
+
+
+===========================================================
+
+/* ========================================== */
+/* STYLING NAVBAR BAWAH (MOBILE)              */
+/* ========================================== */
+
+.navbar-bawah {
+    display: none; /* Sembunyikan secara default di layar besar (PC/Laptop) */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1a1a1a; /* Warna gelap sama dengan navbar atas */
+    border-top: 2px solid #2a2a2a;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    padding: 8px 0;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-bawah-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #a0a0a0; /* Warna menu saat tidak aktif (abu-abu kalem) */
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    gap: 4px;
+}
+
+/* Ukuran Ikon */
+.nav-bawah-item svg {
+    width: 22px;
+    height: 22px;
+}
+
+/* Style ketika menu aktif atau ditekan */
+.nav-bawah-item.aktif, 
+.nav-bawah-item:hover {
+    color: #ff1e1e; /* Warna merah khas sesuai tema logo kamu */
+}
+
+/* Efek sedikit membesar saat ditekan */
+.nav-bawah-item:active {
+    transform: scale(0.9);
+}
+
+/* RESPONSIVE: Memunculkan navbar bawah HANYA di layar HP (Maksimal lebar 768px) */
+@media screen and (max-width: 768px) {
+    .navbar-bawah {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #1a1a1a;
+        border-top: 1px solid #2a2a2a;
+        /* Mengatur tinggi total navbar bawah agar lebih tegap */
+        height: 65px; 
+        padding-bottom: env(safe-area-inset-bottom);
+        z-index: 9999;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .nav-bawah-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #a0a0a0;
+        /* Lebar otomatis dibagi rata supaya area sentuh jempol lebih luas */
+        flex: 1; 
+        height: 100%;
+        gap: 4px; /* Memberi jarak antara ikon dan teks dibawahnya */
+        text-decoration: none;
+        transition: all 0.2s ease;
+    }
+
+    /* Memperbesar Ukuran Ikon */
+    .nav-bawah-item svg {
+        width: 24px;  /* Naik dari 22px */
+        height: 24px; /* Naik dari 22px */
+    }
+
+    /* Memperbesar Ukuran Teks Menu */
+    .nav-bawah-item span {
+        font-size: 0.85rem; /* Naik dari 0.75rem agar lebih jelas */
+        font-weight: 700;   /* Dibuat lebih tebal sedikit */
+        letter-spacing: 0.3px;
+    }
+
+    /* Warna saat menu aktif */
+    .nav-bawah-item.aktif, 
+    .nav-bawah-item:hover {
+        color: #ff1e1e;
+    }
+
+    body {
+        padding-bottom: calc(75px + env(safe-area-inset-bottom));
+    }
+}
+
+
+===========================================================
+
+/* Sesuaikan nama class ini dengan nama class navbar atas milikmu (misal: .navbar atau .header-top) */
+.navbar-atas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #121212; /* Warna background navbar kamu */
+    
+    /* KUNCI UTAMA: Transisi halus untuk pergeseran posisi */
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+}
+
+/* BARU: Class yang akan memicu navbar bergeser sembunyi ke atas luar layar */
+.navbar-atas.nav-hidden {
+    transform: translateY(-100%);
+}

@@ -1,0 +1,240 @@
+/* --- RESET STYLE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #0b0b0c;
+    color: #ffffff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+/* --- WRAPPER UTAMA KELAS HP/APP --- */
+.chat-wrapper {
+    width: 100%;
+    max-width: 480px;
+    height: 100vh;
+    background-color: #111113;
+    border-left: 1px solid #1a1a1f;
+    border-right: 1px solid #1a1a1f;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* --- HEADER CHAT --- */
+.chat-header {
+    background-color: rgba(20, 20, 22, 0.95);
+    border-bottom: 1px solid #1a1a1f;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.tombol-kembali {
+    color: #ffffff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.header-info {
+    flex-grow: 1;
+}
+
+.header-info h3 {
+    font-size: 1.05rem;
+    font-weight: 800;
+}
+
+.status-online {
+    font-size: 0.72rem;
+    color: #9090a0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.titik-hijau {
+    width: 6px;
+    height: 6px;
+    background-color: #2ecc71;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 6px #2ecc71;
+}
+
+.header-menu {
+    background: none;
+    border: none;
+    color: #9090a0;
+    cursor: pointer;
+}
+
+/* --- BOX TIMELINE CHAT --- */
+.chat-box {
+    flex-grow: 1;
+    padding: 20px 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    scrollbar-width: none;
+}
+.chat-box::-webkit-scrollbar { display: none; }
+
+/* Struktur Baris Chat */
+.chat-row {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    max-width: 85%;
+}
+
+/* Avatar Inisial */
+.avatar {
+    width: 36px;
+    height: 36px;
+    background: #ff1e1e;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.chat-konten {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.nama-user {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #a0a0b0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Badge Rank */
+.badge-rank {
+    font-size: 0.6rem;
+    font-weight: 800;
+    padding: 1px 4px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+.badge-rank.vip { background-color: #ff1e1e; color: #fff; }
+.badge-rank.elder { background-color: #f1c40f; color: #000; }
+
+/* Gelembung Pesan */
+.bubble {
+    background-color: #1a1a1f;
+    border: 1px solid #22222a;
+    padding: 10px 14px;
+    border-radius: 4px 16px 16px 16px;
+    font-size: 0.88rem;
+    line-height: 1.4;
+    color: #e0e0e5;
+    word-break: break-word;
+}
+
+.chat-waktu {
+    font-size: 0.65rem;
+    color: #555560;
+    margin-top: 1px;
+}
+
+/* --- KONDISI CHAT USER (KAMU SENDIRI) --- */
+.chat-row.user-row {
+    align-self: flex-end;
+    justify-content: flex-end;
+}
+
+.chat-row.user-row .chat-konten {
+    align-items: flex-end;
+}
+
+.bubble-user {
+    background: #ffffff;
+    color: #000000;
+    padding: 10px 14px;
+    border-radius: 16px 16px 4px 16px;
+    font-size: 0.88rem;
+    line-height: 1.4;
+    font-weight: 500;
+    word-break: break-word;
+}
+
+/* --- AREA INPUT BOX BAWAH --- */
+.chat-input-area {
+    background-color: #141416;
+    border-top: 1px solid #1a1a1f;
+    padding: 12px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.fitur-btn {
+    background: #1a1a1f;
+    border: 1px solid #22222a;
+    color: #ffffff;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-form {
+    flex-grow: 1;
+    display: flex;
+    background-color: #1a1a1f;
+    border: 1px solid #22222a;
+    border-radius: 20px;
+    padding: 2px 4px 2px 12px;
+    align-items: center;
+}
+
+.input-form input {
+    flex-grow: 1;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 0.88rem;
+    padding: 8px 0;
+    outline: none;
+}
+.input-form input::placeholder { color: #555560; }
+
+.kirim-btn {
+    background-color: #ff1e1e;
+    color: #ffffff;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.kirim-btn svg { width: 14px; height: 14px; margin-left: 2px; }
+
+.sistem-notif { text-align: center; font-size: 0.7rem; color: #555560; margin: 10px 0; font-style: italic; }
+.badge-live { background: #ff1e1e; font-size: 0.55rem; padding: 2px 4px; border-radius: 3px; font-weight: 900; vertical-align: middle; margin-left: 5px; animation: pulse 1.5s infinite; }
+@keyframes pulse { 0% { opacity: 0.6; } 50% { opacity: 1; } 100% { opacity: 0.6; } }

@@ -1,0 +1,170 @@
+/* Container Utama: Diberi margin agar tidak menyentuh ujung layar */
+.slider-container {
+    position: relative;
+    margin: 15px; /* Jarak dari ujung layar */
+    height: 350px;
+    overflow: hidden;
+    /* Lengkungan di setiap sudut (kiri bawah, atas, kanan bawah, atas) */
+    border-radius: 16px; 
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    background-color: #1a1a1a;
+}
+
+.slider-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* Mengatur Slide (Bentuk Link) */
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: #fff;
+}
+
+.slide.aktif {
+    opacity: 1;
+    z-index: 2;
+}
+
+.slide-gambar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+/* Lapisan Efek Gelap dengan Semburat Merah Tema NexaToon */
+.slide-overlay-merah {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(20, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 60%, rgba(20, 0, 0, 0.7) 100%);
+    z-index: -1;
+}
+
+/* --- POSISI ATAS: JADWAL, ONGOING, RATING, TOTAL (HORIZONTAL) --- */
+.slide-info-atas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    z-index: 5;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background-color: rgba(255, 30, 30, 0.85); /* Berwarna Merah sesuai request */
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.info-item svg {
+    width: 12px;
+    height: 12px;
+}
+
+/* --- POSISI BAWAH: GENRE, SINOPSIS, JUDUL (VERTIKAL URUTAN SESUAI REQUEST) --- */
+.slide-info-bawah {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 5;
+    max-width: 85%; /* Agar tidak menabrak area kanan jika terlalu panjang */
+}
+
+/* Posisi Judul paling atas di bagian bawah */
+.slide-judul {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+    margin: 0;
+}
+
+/* Posisi Sinopsis tepat di bawah judul */
+.slide-sinopsis {
+    font-size: 0.85rem;
+    color: #e0e0e0;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin: 0;
+}
+
+/* Posisi Genre paling bawah kiri slider */
+.slide-genre {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #ff3838; /* Warna merah */
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.slide-genre svg {
+    width: 12px;
+    height: 12px;
+}
+
+/* --- TITIK KECIL DI ATAS KANAN SLIDER --- */
+.slider-dots {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    flex-direction: column; /* Tersusun vertikal tipis di pojok kanan atas */
+    gap: 6px;
+    z-index: 10;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.aktif {
+    background-color: #ff1e1e; /* Warna merah aktif */
+    transform: scale(1.3);
+}
+
+/* RESPONSIVE: Penyesuaian layar HP agar teks tidak menumpuk */
+@media screen and (max-width: 768px) {
+    .slider-container {
+        height: 280px;
+        margin: 10px;
+    }
+    .slide-judul { font-size: 1.1rem; }
+    .slide-sinopsis { -webkit-line-clamp: 1; font-size: 0.75rem; }
+    .info-item { font-size: 0.65rem; padding: 2px 6px; }
+}
+content://com.android.externalstorage.documents/tree/primary%3ANexaToon::primary:NexaToon/slider.css

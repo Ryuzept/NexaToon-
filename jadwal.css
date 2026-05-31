@@ -1,0 +1,174 @@
+/* --- SECTION UTAMA JADWAL --- */
+.jadwal-section {
+    margin: 0 15px 25px 15px;
+}
+
+.jadwal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 12px;
+    padding: 0 2px;
+}
+
+.jadwal-title {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-left: 10px;
+    margin: 0;
+}
+
+.jadwal-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 16px;
+    background-color: #ff1e1e;
+    border-radius: 2px;
+}
+
+.jadwal-sub {
+    font-size: 0.68rem;
+    color: #808080;
+}
+
+/* --- TABS HARI SYSTEM --- */
+.jadwal-tabs {
+    display: flex;
+    justify-content: space-between;
+    background-color: #161616;
+    padding: 4px;
+    border-radius: 8px;
+    border: 1px solid #222;
+    margin-bottom: 15px;
+    gap: 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+.jadwal-tabs::-webkit-scrollbar { display: none; }
+
+.tab-hari {
+    flex: 1;
+    background: none;
+    border: none;
+    color: #a0a0a0;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 8px 0;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    min-width: 45px;
+    transition: all 0.2s ease;
+}
+
+.tab-hari:hover {
+    color: #fff;
+}
+
+.tab-hari.active {
+    background-color: #ff1e1e;
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(255, 30, 30, 0.3);
+}
+
+/* --- GRID HASIL JADWAL --- */
+.jadwal-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 kolom di Desktop, di HP nanti 1 kolom */
+    gap: 10px;
+}
+
+/* Desain List Kartu */
+.jadwal-card {
+    display: flex;
+    align-items: center;
+    background-color: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    padding: 6px;
+    gap: 10px;
+    text-decoration: none;
+    transition: border-color 0.2s;
+}
+
+.jadwal-card:hover {
+    border-color: #ff1e1e;
+}
+
+.jadwal-thumb {
+    position: relative;
+    width: 55px;
+    aspect-ratio: 3 / 4;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #000;
+    flex-shrink: 0;
+}
+
+.jadwal-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Badge Jam Rilis Menempel di Thumbnail */
+.jadwal-badge-jam {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    font-size: 0.55rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 1px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+}
+.jadwal-badge-jam svg { width: 8px; height: 8px; color: #ff1e1e; }
+
+/* Info Teks */
+.jadwal-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    overflow: hidden;
+}
+
+.jadwal-judul-teks {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.jadwal-kosong {
+    grid-column: span 2;
+    text-align: center;
+    font-size: 0.75rem;
+    color: #808080;
+    padding: 20px 0;
+}
+
+/* --- MOBILE OPTIMIZATION --- */
+@media screen and (max-width: 768px) {
+    .jadwal-section { margin: 0 10px 25px 10px; }
+    .jadwal-title { font-size: 1.05rem; }
+    .jadwal-title::before { height: 14px; }
+    .jadwal-grid {
+        grid-template-columns: 1fr; /* Di HP berubah jadi full 1 kolom ke bawah agar muat */
+    }
+}

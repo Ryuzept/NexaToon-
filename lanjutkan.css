@@ -1,0 +1,250 @@
+/* --- SECTION UTAMA NEXATOON LANJUTKAN --- */
+.lanjutkan-section {
+    margin: 0 15px 25px 15px;
+    overflow: hidden;
+}
+
+/* Header Title (Kembar Identik) */
+.lanjutkan-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 0 2px;
+}
+
+.lanjutkan-title {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-left: 10px;
+    margin: 0;
+}
+
+.lanjutkan-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 16px;
+    background-color: #ff1e1e;
+    border-radius: 2px;
+}
+
+.lanjutkan-lihat-semua {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    color: #ff1e1e;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.lanjutkan-lihat-semua:hover {
+    opacity: 0.8;
+}
+
+.lanjutkan-lihat-semua svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* --- SLIDER SYSTEM --- */
+.lanjutkan-slider {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding: 4px 2px 10px 2px;
+    white-space: nowrap;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.lanjutkan-slider::-webkit-scrollbar {
+    display: none;
+}
+
+/* --- DESAIN KARTU LANJUTKAN --- */
+.lanjutkan-card {
+    flex: 0 0 45%; 
+    max-width: 180px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #2a2a2a;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    scroll-snap-align: start;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.lanjutkan-card:hover {
+    border-color: #ff1e1e;
+    transform: translateY(-2px);
+}
+
+.lanjutkan-thumb-box {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: #000;
+    overflow: hidden;
+}
+
+.lanjutkan-gambar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Badge Durasi Waktu di Atas Kanan */
+.lanjutkan-badge-durasi {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    font-size: 0.6rem;
+    font-weight: 700;
+    padding: 2px 5px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    z-index: 4;
+}
+
+.lanjutkan-badge-durasi svg {
+    width: 10px;
+    height: 10px;
+    color: #ff1e1e;
+}
+
+/* Efek Play Tengah */
+.lanjutkan-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: 3;
+}
+
+.lanjutkan-card:hover .lanjutkan-overlay {
+    opacity: 1;
+}
+
+.lanjutkan-ikon-play {
+    background-color: #ff1e1e;
+    color: #fff;
+    padding: 6px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lanjutkan-ikon-play svg {
+    width: 12px;
+    height: 12px;
+    fill: currentColor;
+}
+
+/* Progress Bar */
+.lanjutkan-progress-bg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.2);
+    z-index: 4;
+}
+
+.lanjutkan-progress-bar {
+    height: 100%;
+    background-color: #ff1e1e;
+}
+
+/* Teks Info */
+.lanjutkan-detail {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.lanjutkan-judul {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Wadah Meta Bawah Horizontal */
+.lanjutkan-meta-bawah {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* BARU: Badge Jenis Mini */
+.badge-jenis-mini {
+    font-size: 0.55rem;
+    font-weight: 800;
+    padding: 1px 4px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #333;
+    flex-shrink: 0;
+}
+.badge-jenis-mini.anime, .badge-jenis-mini.donghua { background-color: #ff1e1e; }
+.badge-jenis-mini.manga { background-color: #007bff; }
+.badge-jenis-mini.manhwa { background-color: #28a745; }
+.badge-jenis-mini.manhua { background-color: #ffc107; color: #121212; }
+
+.lanjutkan-posisi {
+    font-size: 0.68rem;
+    color: #a0a0a0;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* --- MOBILE RESPONSIVE --- */
+@media screen and (max-width: 768px) {
+    .lanjutkan-section {
+        margin: 0 10px 25px 10px;
+    }
+    .lanjutkan-title {
+        font-size: 1.05rem;
+    }
+    .lanjutkan-title::before {
+        height: 14px;
+    }
+    .lanjutkan-lihat-semua {
+        font-size: 0.75rem;
+    }
+    .lanjutkan-card {
+        flex: 0 0 55%; 
+    }
+}

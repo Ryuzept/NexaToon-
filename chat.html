@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexaChat - Player Room</title>
+    <link rel="stylesheet" href="nexatoon-chat.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <div class="chat-wrapper">
+        <header class="chat-header">
+            <a href="sosmed.html" class="tombol-kembali">
+                <i data-lucide="chevron-left"></i>
+            </a>
+            <div class="header-info">
+                <h3>NexaChat #01</h3>
+                <span class="status-online"><span class="titik-hijau"></span> 1,420 Players Online</span>
+            </div>
+            <button class="header-menu"><i data-lucide="more-vertical"></i></button>
+        </header>
+
+        <main class="chat-box" id="chatBox">
+            <div class="chat-row">
+                <div class="avatar">KR</div>
+                <div class="chat-konten">
+                    <div class="nama-user">Kael_Renegade <span class="badge-rank vip">VIP</span></div>
+                    <div class="bubble">Ada yang tahu kapan Solo Leveling Ragnarok chapter terbaru rilis di NexaToon? 🔥</div>
+                    <span class="chat-waktu">10:42 AM</span>
+                </div>
+            </div>
+
+            <div class="chat-row">
+                <div class="avatar" style="background: #e67e22;">MX</div>
+                <div class="chat-konten">
+                    <div class="nama-user">Martial_Xian <span class="badge-rank elder">Elder</span></div>
+                    <div class="bubble">Biasanya tiap hari Kamis jam 11 malam bro, barengan sama jadwal raw Korea-nya langsung.</div>
+                    <span class="chat-waktu">10:43 AM</span>
+                </div>
+            </div>
+
+            <div class="chat-row user-row">
+                <div class="chat-konten">
+                    <div class="bubble-user">Mantap! Gak sabar nunggu kelanjutan arc terbarunya. Grafisnya makin gokil!</div>
+                    <span class="chat-waktu">10:45 AM</span>
+                </div>
+            </div>
+        </main>
+
+        <footer class="chat-input-area">
+            <button class="fitur-btn"><i data-lucide="plus"></i></button>
+            <form class="input-form" onsubmit="return false;">
+                <input type="text" placeholder="Ketik pesan di NexaChat..." id="pesanInput">
+                <button type="submit" class="kirim-btn"><i data-lucide="send"></i></button>
+            </form>
+        </footer>
+    </div>
+
+    <script>
+        // Inisialisasi Ikon Lucide
+        lucide.createIcons();
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+/* Reset dasar untuk menghilangkan margin bawaan browser */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Pengaturan dasar untuk body (bisa kamu sesuaikan nanti) */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212; /* Warna latar belakang gelap khas situs anime/manga */
+    color: #ffffff; /* Warna teks putih agar mudah dibaca */
+    line-height: 1.6;
+}
+
+/* Pengaturan dasar untuk link/tautan */
+a {
+    text-color: inherit;
+    text-decoration: none;
+}
+
+/* Pengaturan dasar untuk daftar/list */
+ul, ol {
+    list-style: none;
+}

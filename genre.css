@@ -1,0 +1,135 @@
+/* ==========================================
+   KOMPONEN GENRE - NEXATOON
+   ========================================== */
+
+/* Container Utama Area Genre */
+.genre-section {
+    margin: 0 15px 15px 15px; /* Jarak luar konsisten dengan slider & terbaru */
+    overflow: hidden;
+}
+
+/* --- HEADER GENRE (SAMA PERSIS DENGAN TERBARU) --- */
+.genre-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px; /* Jarak antara tulisan dan tombol kapsul di bawahnya */
+    padding: 0 2px;
+}
+
+/* Tulisan Genre di Kiri */
+.genre-title {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-left: 10px;
+    margin: 0;
+}
+
+/* Aksen garis vertikal merah di samping tulisan "Genre" */
+.genre-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 16px;
+    background-color: #ff1e1e;
+    border-radius: 2px;
+}
+
+/* Tombol Lihat Semua di Kanan Sejajar */
+.genre-lihat-semua {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    color: #ff1e1e;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.genre-lihat-semua:hover {
+    opacity: 0.8;
+}
+
+.genre-lihat-semua svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* --- SCROLLABLE CONTAINER (KAPSUL GENRE) --- */
+.genre-container {
+    display: flex;
+    gap: 10px; /* Jarak antar tombol genre */
+    overflow-x: auto; /* Memungkinkan geser horizontal jika penuh */
+    padding: 5px 2px 10px 2px; /* Ruang bawah untuk efek shadow */
+    white-space: nowrap;
+    
+    /* Navigasi geser halus di HP */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Sembunyikan scrollbar di Firefox */
+}
+
+/* Menyembunyikan scrollbar bawaan di Chrome/Safari */
+.genre-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Desain Tombol Kapsul Genre */
+.genre-item {
+    display: inline-block;
+    background-color: #1a1a1a;
+    color: #a0a0a0;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border: 1px solid #2a2a2a;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    user-select: none;
+    text-decoration: none;
+}
+
+.genre-item:hover {
+    color: #ffffff;
+    border-color: #ff1e1e;
+    background-color: rgba(255, 30, 30, 0.05);
+}
+
+/* Gaya Ketika Genre Sedang Aktif / Dipilih */
+.genre-item.aktif {
+    background-color: #ff1e1e;
+    color: #ffffff;
+    border-color: #ff1e1e;
+    box-shadow: 0 4px 12px rgba(255, 30, 30, 0.3);
+}
+
+/* --- RESPONSIVE OPTIMASI KHUSUS MOBILE (SAMA PERSIS) --- */
+@media screen and (max-width: 768px) {
+    .genre-section {
+        margin: 0 10px 15px 10px; /* Sinkron dengan margin mobile terbaru */
+    }
+    .genre-title {
+        font-size: 1.05rem;
+    }
+    .genre-title::before {
+        height: 14px;
+    }
+    .genre-lihat-semua {
+        font-size: 0.75rem;
+    }
+    .genre-lihat-semua svg {
+        width: 14px;
+        height: 14px;
+    }
+    .genre-item {
+        padding: 6px 14px;
+        font-size: 0.8rem;
+    }
+}
